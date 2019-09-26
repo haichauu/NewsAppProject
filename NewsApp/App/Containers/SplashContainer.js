@@ -30,7 +30,7 @@ export default class SplashContainer extends Component {
 
         return (
             <View style={styles.container}>
-                <AppText style={styles.titleText}>News</AppText>
+                <AppText style={styles.title}>News</AppText>
                 <Icon {...iconProps} />
                 <Button title='Move to SourceContainer' onPress={() => { this.props.navigation.navigate('SourceScreen') }} />
             </View>
