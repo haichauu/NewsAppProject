@@ -9,19 +9,16 @@ import DetailContainer from '../Containers/DetailContainer';
 
 const mainNav = createStackNavigator(
     {
-        SplashScreen: {
-            screen: SplashContainer, navigationOptions: () => ({
-                header: null,
-            })
-        },
-        SourceScreen: { screen: SourceContainer },
+        SplashScreen: { screen: SplashContainer, navigationOptions: () => ({header: null}) },
+        SourceScreen: { screen: SourceContainer, navigationOptions: () => ({headerLeft: null}) },
         ArticleScreen: { screen: ArticleContainer },
         DetailScreen: { screen: DetailContainer },
     },
     {
+
         headerBackTitleVisible: false,
         defaultNavigationOptions: ({ navigation }) => ({
-            title: navigation.state.routeName
+            title: navigation.state.routeName,
         }),
         initialRouteName: 'SplashScreen',
 
