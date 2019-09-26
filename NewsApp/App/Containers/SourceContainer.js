@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Button } from 'react-native'
-import AppText from '../Common/AppText'
+import AppText from '../Components/Common/AppText'
 
 
 export default class SourceContainer extends Component {
