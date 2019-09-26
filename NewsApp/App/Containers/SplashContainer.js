@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Button } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import AppText from '../Common/AppText'
+import AppText from '../Components/Common/AppText'
 import styles from '../Containers/Styles/SplashContainerStyle'
 import { Icon } from 'react-native-elements'
 
