@@ -1,22 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View, Button, StyleSheet } from 'react-native'
-
+import { View, Button } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import AppText from '../Components/Common/AppText'
-
-
-const styles = StyleSheet.create({
-    text: {
-      fontSize: 24,
-    }
-});
+import styles from '../Containers/Styles/SplashContainerStyle'
+import { Icon } from 'react-native-elements'
 
 export default class SplashContainer extends Component {
-    
 
     constructor() {
         super()
         this.state = {
-          }
+        }
     }
 
     componentDidMount = () => {
@@ -24,12 +18,20 @@ export default class SplashContainer extends Component {
             this.props.navigation.navigate('SourceScreen')
         }, 3000);
     }
-    
+
 
     render() {
+        const iconProps = {
+            name: 'logo-snapchat',
+            type: 'ionicon',
+            color: 'white',
+            size: 65
+        } 
+
         return (
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                <AppText text='not ok'>ok</AppText>
+            <View style={styles.container}>
+                <AppText style={styles.titleText}>News</AppText>
+                <Icon {...iconProps} />
                 <Button title='Move to SourceContainer' onPress={() => { this.props.navigation.navigate('SourceScreen') }} />
             </View>
         )
