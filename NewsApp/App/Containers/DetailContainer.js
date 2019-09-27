@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
+import {WebView} from 'react-native-webview'
 
 
 export default class DetailContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            url: null
+        }
+    }
+
+    componentWillMount = () => {
+        const {navigation} = this.props
+        const url = navigation.getParam('url', null)
+        this.setState({url: url})
+    }
+
     render() {
+
+        const {url} = this.state
+        
         return (
-            <View style={{backgroundColor: 'pink', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <Button title='Go Back' onPress={()=>{this.props.navigation.goBack()}} />
-            </View>
+                <WebView 
+                    source={{uri: url}} />
         )
     }
 }

@@ -4,7 +4,7 @@ import SourceItem from '../Source/SourceItem'
 import ArticleItem from '../Article/ArticleItem'
 
 const AppFlatList = (props) => {
-    const { sourceData, articleData, numColumns } = props;
+    const { sourceData, articleData, numColumns, onPressItem } = props;
 
     const renderArticleItem = (item) => {
         const {urlToImage, title, author, publishedAt, url, description } = item;
@@ -18,7 +18,8 @@ const AppFlatList = (props) => {
             author,
             publishedAt,
             description,
-            url
+            url,
+            onPressItem: () => {onPressItem.navigate('DetailScreen', { url: url })}
         }
         return (
             <ArticleItem {...props} />
@@ -35,7 +36,8 @@ const AppFlatList = (props) => {
             name,
             description,
             urlWebsite: url,
-            category
+            category,
+            onPressItem
         }
         return (
             <SourceItem key={item.id} {...props} />

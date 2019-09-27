@@ -5,10 +5,10 @@ import AppText from '../Common/AppText'
 
 
 const SourceItem = (props) => {
-    const { name, urlWebsite, description, style, category } = props;
+    const { name, urlWebsite, description, style, category, onPressItem } = props;
     return (
         <View {...props} style={[styles.container, style]}>
-            <TouchableOpacity style={styles.titleWrapper} >
+            <TouchableOpacity onPress={onPressItem} style={styles.titleWrapper} >
                 <AppText text={name} style={styles.nameText} />
             </TouchableOpacity>
             <View style={styles.infoWrapper}>
