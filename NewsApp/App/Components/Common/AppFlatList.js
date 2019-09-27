@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { View, Button, FlatList, Text } from 'react-native'
-import styles from '../Source/Styles/SourceItemStyle'
-import AppText from '../Common/AppText'
+import { FlatList } from 'react-native'
 import SourceItem from '../Source/SourceItem'
 import ArticleItem from '../Article/ArticleItem'
 
@@ -45,9 +43,9 @@ const AppFlatList = (props) => {
     }
 
     const flatListProps = {
-        data: articleData ? articleData : sourceData,
+        data: articleData ? articleData : sourceData ? sourceData : null,
         numColumns: numColumns,
-        renderItem: ({item}) => articleData ? renderArticleItem(item) : renderResourceItem(item)
+        renderItem: ({item}) => articleData ? renderArticleItem(item) : sourceData ? renderResourceItem(item) : null
     }
 
     return (
