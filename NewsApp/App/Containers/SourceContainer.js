@@ -76,7 +76,8 @@ export default class SourceContainer extends Component {
         const {listResource} = this.state
         const flatListProps = {
             sourceData: listResource,
-            numColumns: 2
+            numColumns: 2,
+            onPressItem: () => {this.props.navigation.navigate('ArticleScreen')}
         }
         return (
             <View style={styles.container}>
