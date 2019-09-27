@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         fontFamily: font,
-        color: 'pink',
+        color: 'white',
     }
 })
 

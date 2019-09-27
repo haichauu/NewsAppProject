@@ -6,6 +6,7 @@ import SourceItem from '../Components/Source/SourceItem';
 import AppFlatList from '../Components/Common/AppFlatList'
 
 
+
 export default class SourceContainer extends Component {
     constructor(props) {
         super(props);
@@ -70,8 +71,6 @@ export default class SourceContainer extends Component {
             ]
         }
     }
-
-
 
     render() {
         const {listResource} = this.state
