@@ -18,33 +18,34 @@ export default class MoreLessText extends Component {
 
     onLayout = (event) => {
 
-        const {originalHeight} = this.state
+        const { originalHeight } = this.state
         const { height } = event.nativeEvent.layout
-
-        if (!this.state.numberOfLinesAtStart) {
-            this.setState({ 
-                numberOfLinesAtStart: this.props.numberOfLines,
-                originalHeight: height
-            })
-        }
-        if (originalHeight > height) {
-            // console.log('over')
-            this.setState({ showButton: true })
+        if (this.props.numberOfLines) {
+            if (!this.state.numberOfLinesAtStart) {
+                this.setState({
+                    numberOfLinesAtStart: this.props.numberOfLines,
+                    originalHeight: height
+                })
+            }
+            if (originalHeight > height) {
+                // console.log('over')
+                this.setState({ showButton: true })
+            }
         }
     }
 
     onPressMoreLess = () => {
-        this.setState({isExpand: !this.state.isExpand})
+        this.setState({ isExpand: !this.state.isExpand })
     }
 
 
     render() {
 
-        const {children, text, style, textStyle } = this.props
-        const {isExpand, numberOfLinesAtStart} = this.state
+        const { children, text, style, textStyle } = this.props
+        const { isExpand, numberOfLinesAtStart } = this.state
 
         let itemProps = {
-            style: textStyle, 
+            style: textStyle,
             text: children ? children : text,
             numberOfLines: isExpand ? null : numberOfLinesAtStart
         }
