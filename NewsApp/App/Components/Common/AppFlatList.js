@@ -3,47 +3,40 @@ import { View, Button, FlatList, Text } from 'react-native'
 import styles from '../Source/Styles/SourceItemStyle'
 import AppText from '../Common/AppText'
 import SourceItem from '../Source/SourceItem'
+import ArticleItem from '../Article/ArticleItem'
 
 const AppFlatList = (props) => {
     const { sourceData, articleData, numColumns } = props;
 
-    const isRenderSourceList = () => {
-        if(sourceData && !articleData){
-            return true
-        }
-        return false
-    }
-    const flatListProps = {
-        data: isRenderSourceList ? sourceData : articleData,
-        numColumns: numColumns,
-        renderItem: ({item}) => isRenderSourceList ? renderResourceItem(item) : renderArticleItem(item)
-    }
-
     const renderArticleItem = (item) => {
-        const { name, description, url, category } = item;
+        const {urlToImage, title, author, publishedAt, url, description } = item;
         const props = {
+            key: title,
             style: {
                 margin: 5
             },
-            name,
+            urlImage: urlToImage,
+            title,
+            author,
+            publishedAt,
             description,
-            urlWebsite: 'link',
-            category
+            url
         }
         return (
-            <SourceItem key={item.id} {...props} />
+            <ArticleItem {...props} />
         )
     }
 
     const renderResourceItem = (item) => {
-        const { name, description, url, category } = item;
+        const {id, name, description, url, category } = item;
         const props = {
+            key: id,
             style: {
                 margin: 5
             },
             name,
             description,
-            urlWebsite: 'link',
+            urlWebsite: url,
             category
         }
         return (
@@ -51,8 +44,14 @@ const AppFlatList = (props) => {
         )
     }
 
+    const flatListProps = {
+        data: articleData ? articleData : sourceData,
+        numColumns: numColumns,
+        renderItem: ({item}) => articleData ? renderArticleItem(item) : renderResourceItem(item)
+    }
+
     return (
-        <FlatList {...flatListProps}/>
+        <FlatList {...props} {...flatListProps}/>
     )
 }
 

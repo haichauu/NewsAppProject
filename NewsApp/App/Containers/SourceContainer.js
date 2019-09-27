@@ -12,7 +12,7 @@ export default class SourceContainer extends Component {
         super(props);
         this.state = {
             listResource: [{
-                id: "associated-press",
+                id: "1",
                 name: "Associated Press",
                 description: "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
                 url: "https://apnews.com/",
@@ -26,7 +26,7 @@ export default class SourceContainer extends Component {
                 },
             },
             {
-                id: "associated-press",
+                id: "2",
                 name: "Associated Press",
                 description: "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
                 url: "https://apnews.com/",
@@ -40,7 +40,7 @@ export default class SourceContainer extends Component {
                 },
             },
             {
-                id: "associated-press",
+                id: "3",
                 name: "Associated Press",
                 description: "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
                 url: "https://apnews.com/",
@@ -54,7 +54,7 @@ export default class SourceContainer extends Component {
                 },
             },
             {
-                id: "associated-press",
+                id: "4",
                 name: "Associated Press",
                 description: "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
                 url: "https://apnews.com/",
