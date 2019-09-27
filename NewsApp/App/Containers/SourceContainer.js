@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { View, Button, ListRenderItem, FlatList, Text } from 'react-native'
+import { View, Button, FlatList, Text } from 'react-native'
+import styles from './Styles/SourceContainerStyle'
 import AppText from '../Components/Common/AppText'
 import SourceItem from '../Components/Source/SourceItem';
+import AppFlatList from '../Components/Common/AppFlatList'
+
 
 
 export default class SourceContainer extends Component {
@@ -69,43 +72,15 @@ export default class SourceContainer extends Component {
         }
     }
 
-    renderResourceItem = (item) => {
-        const { name, description, url, category } = item;
-        const props = {
-            style: {
-                margin: 5
-            },
-            name,
-            description,
-            urlWebsite: 'link',
-            category
+    render() {
+        const {listResource} = this.state
+        const flatListProps = {
+            sourceData: listResource,
+            numColumns: 2
         }
         return (
-            <SourceItem  key={item.id} {...props} />
-        )
-    }
-
-    renderResource = () => {
-        const { listResource } = this.state;
-        return (
-            <FlatList
-                numColumns={2}
-                data={listResource}
-                renderItem={({ item }) => this.renderResourceItem(item)}
-                // contentContainerStyle={{backgroundColor: 'orange', alignItems: "center", justifyContent: "center"}}
-
-            />
-        )
-    }
-
-
-    render() {
-        const { listResource } = this.props;
-        return (
-            <View style={{ alignItems: "center", justifyContent: "center" , padding: 5 }}>
-              
-                    {this.renderResource()}
-
+            <View style={styles.container}>
+                <AppFlatList {...flatListProps} />
                 <Button title='Move to Article Container' onPress={() => { this.props.navigation.navigate('ArticleScreen') }} />
                 <Button title='Go Back' onPress={() => { this.props.navigation.goBack() }} />
             </View>

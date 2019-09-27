@@ -16,7 +16,6 @@ const SourceItem = (props) => {
                 <AppText onPress={() => {Linking.openURL(urlWebsite)}} text='Link' style={styles.websiteText} />
                 <AppText numberOfLines={3} text={description} style={styles.descriptionText} />
             </View>
-
         </View>
     );
 
