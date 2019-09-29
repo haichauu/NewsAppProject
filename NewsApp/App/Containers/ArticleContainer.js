@@ -37,7 +37,7 @@ export default class ArticleContainer extends Component {
                 {
                     author: "Nilay Patel, Chris Welch",
                     title: "Packers vs Eagles: inside the first-ever NFL broadcast in 4K HDR",
-                    description: "Honestly, it’s a better phone than the OnePlus 7 Pro.",
+                    description: "Honestly, it’s a better phone than the OnePlus 7 Pro.lflkjfla;skfjslfjal;fjeo;agjlmsafjaljewfowjafowdafejfoweajfeawolafjlajelida jfeoasjfeaowljgegjslkjvo;jgeoi",
                     url: "https://www.theverge.com/2019/9/26/20884800/uber-app-announcement-ubereats-safety-transit-updates",
                     publishedAt: "2019-09-26T16:13:52Z"
                 },

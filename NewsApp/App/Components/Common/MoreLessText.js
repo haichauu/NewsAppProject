@@ -20,6 +20,7 @@ export default class MoreLessText extends Component {
 
         const { originalHeight } = this.state
         const { height } = event.nativeEvent.layout
+        //console.log(height)
         if (this.props.numberOfLines) {
             if (!this.state.numberOfLinesAtStart) {
                 this.setState({
@@ -28,7 +29,7 @@ export default class MoreLessText extends Component {
                 })
             }
             if (originalHeight > height) {
-                // console.log('over')
+                 console.log(originalHeight)
                 this.setState({ showButton: true })
             }
         }
@@ -43,7 +44,7 @@ export default class MoreLessText extends Component {
 
         const { children, text, style, textStyle } = this.props
         const { isExpand, numberOfLinesAtStart } = this.state
-
+        console.log(this.state.numberOfLinesAtStart)
         let itemProps = {
             style: textStyle,
             text: children ? children : text,
