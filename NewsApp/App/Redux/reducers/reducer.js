@@ -4,8 +4,6 @@ import loadDataArticle from './loadDataArticle'
 
 
 
-
-
 const reducer = combineReducers({
     stateSource: loadDataSource,
     stateArticle: loadDataArticle

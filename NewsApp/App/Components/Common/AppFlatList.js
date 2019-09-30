@@ -30,6 +30,7 @@ const AppFlatList = (props) => {
         const {id, name, description, url, category } = item;
         const props = {
             key: id,
+            id,
             style: {
                 margin: 5
             },
@@ -37,7 +38,7 @@ const AppFlatList = (props) => {
             description,
             urlWebsite: url,
             category,
-            onPressItem
+            onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })}
         }
         return (
             <SourceItem key={item.id} {...props} />

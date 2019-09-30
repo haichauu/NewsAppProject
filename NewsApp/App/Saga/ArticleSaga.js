@@ -7,7 +7,7 @@ function* fetchApiArticle(action){
 
 
     
-    yield put({type: 'GET_DATA_ARTICLE', data: data.sources})
+    yield put({type: 'GET_DATA_ARTICLE', data: data.articles})
     //alert('allllooo')
 
   //  const data = respond.json();

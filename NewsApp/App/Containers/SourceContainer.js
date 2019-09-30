@@ -13,7 +13,6 @@ class SourceContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listResource: []
         }
     }
 
@@ -27,11 +26,11 @@ class SourceContainer extends Component {
         //console.log(this.props.isLoadingDataSource)
         //alert(this.props.stateArticle.isLoading)
        // console.log(this.props.newProps)
-        const {listResource} = this.state
         const {data} = this.props.newProps;
         const flatListProps = {
             sourceData: data,
-            numColumns: 2
+            numColumns: 2,
+            onPressItem: this.props.navigation
         }
         return (
             <View style={styles.container}>
