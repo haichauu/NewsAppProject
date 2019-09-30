@@ -4,6 +4,7 @@ const {height, width} = Dimensions.get('window');
 const widthItem = (width-30)*0.5;
 
 
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'pink',
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
 
     },
 
-    category: {
-
+    categotyText: {
+        color: 'red'
     },
     categotyText: {
         color: 'red',

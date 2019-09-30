@@ -18,9 +18,9 @@ class SourceContainer extends Component {
 
     componentDidMount = () => {
        this.props.LoadDataSoure;
-       this.props.loadDataArticle
-      // this.props.GetData;
+
     }
+
 
     render() {
         //console.log(this.props.isLoadingDataSource)

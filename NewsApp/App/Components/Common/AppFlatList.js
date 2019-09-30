@@ -8,6 +8,7 @@ const AppFlatList = (props) => {
 
     const renderArticleItem = (item) => {
         const {urlToImage, title, author, publishedAt, url, description } = item;
+        //console.log(id)
         const props = {
             key: title,
             style: {
@@ -19,11 +20,16 @@ const AppFlatList = (props) => {
             publishedAt,
             description,
             url,
+            id,
             onPressItem: () => {onPressItem.navigate('DetailScreen', { url: url })}
         }
         return (
             <ArticleItem {...props} />
         )
+    }
+
+    const OnPressItem = (id) => {
+        console.log(id)
     }
 
     const renderResourceItem = (item) => {
@@ -34,6 +40,7 @@ const AppFlatList = (props) => {
             style: {
                 margin: 5
             },
+            id,
             name,
             description,
             urlWebsite: url,
@@ -41,7 +48,7 @@ const AppFlatList = (props) => {
             onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })}
         }
         return (
-            <SourceItem key={item.id} {...props} />
+            <SourceItem key={item.id}  {...props} />
         )
     }
 

@@ -10,8 +10,9 @@ const SourceItem = (props) => {
 
     return (
         <View {...props} style={[styles.container, style]}>
-            <TouchableOpacity onPress={onPressItem} style={styles.titleWrapper} >
+            <TouchableOpacity onPress={() => onPressItem(id)} style={styles.titleWrapper} >
                 <AppText text={name} style={styles.nameText} />
+               
             </TouchableOpacity>
             <View style={styles.infoWrapper}>
             <AppText text={category.charAt(0).toUpperCase() + category.slice(1)} style={styles.categotyText} />
