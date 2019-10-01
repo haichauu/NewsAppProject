@@ -25,7 +25,7 @@ class ArticleContainer extends Component {
 
     render() {
 
-        const {data} = this.props.stateArticle
+        const {data, isLoading} = this.props.stateArticle
         const flatListProps = {
             articleData: data,
             onPressItem: this.props.navigation
@@ -33,7 +33,7 @@ class ArticleContainer extends Component {
         console.log(data)
         return (
             <View style={styles.container}>
-                <AppIndicator show={data.isLoading} />
+                <AppIndicator show={isLoading} />
                 <AppFlatList {...flatListProps} />
             </View>
         )

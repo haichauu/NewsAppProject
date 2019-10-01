@@ -24,7 +24,8 @@ class SourceContainer extends Component {
 
 
     render() {
-        const {data} = this.props.newProps;
+        const {data, isLoading} = this.props.newProps;
+        console.log(data)
         const flatListProps = {
             sourceData: data,
             numColumns: 2,
@@ -32,7 +33,7 @@ class SourceContainer extends Component {
         }
         return (
             <View style={styles.container}>
-                <AppIndicator show={data.isLoading} />
+                <AppIndicator show={isLoading} />
                 <AppFlatList {...flatListProps} />
             </View>
         )
