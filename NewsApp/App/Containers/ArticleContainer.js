@@ -13,7 +13,7 @@ class ArticleContainer extends Component {
         }
     }
 
-    componentWillMount = () => {
+    UNSAFE_componentWillMount = () => {
         const {navigation} = this.props
         const sourceId = navigation.getParam('id', null)
         this.setState({sourceId: sourceId})

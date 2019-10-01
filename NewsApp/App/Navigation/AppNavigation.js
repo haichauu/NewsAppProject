@@ -21,7 +21,6 @@ const mainNav = createStackNavigator(
             title: navigation.state.routeName,
         }),
         initialRouteName: 'SplashScreen',
-
     }
 
 )

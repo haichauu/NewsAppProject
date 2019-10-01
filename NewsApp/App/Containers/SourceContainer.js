@@ -25,7 +25,6 @@ class SourceContainer extends Component {
 
     render() {
         const {data, isLoading} = this.props.newProps;
-        console.log(data)
         const flatListProps = {
             sourceData: data,
             numColumns: 2,

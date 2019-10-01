@@ -10,7 +10,7 @@ const appIndicator = (props) => {
 
     const indicatorProps = {
         size: 'small',
-        color: 'pink',
+        color: 'yellow',
         animating: true
     }
 
