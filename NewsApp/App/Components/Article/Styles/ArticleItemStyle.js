@@ -2,7 +2,12 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ffcccb',
+        backgroundColor: '#c4dcdc',
+        borderRadius: 10,
+        shadowColor: 'red',
+        shadowOffset: {width: 5, height: 8},
+        shadowRadius: 3,
+        elevation: 6
     },
     imageBackground: {
         width: '100%',
@@ -11,17 +16,18 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontWeight: 'bold',
-        color: 'black'
+        fontSize: 22
+    
     },
     authorText: {
-        fontSize: 15,
+        fontSize: 13,
         paddingVertical: 5,
-        color: 'black'
-
+        color: 'black',
     },
     publishedAtText: {
         fontSize: 13,
-        color: 'black'
+        color: 'black',
+        textAlign: 'right'
     },
     descriptionText: {
         fontSize: 15,

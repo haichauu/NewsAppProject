@@ -17,7 +17,6 @@ export default class MoreLessText extends Component {
 
 
     onLayout = (event) => {
-
         const { originalHeight } = this.state
         const { height } = event.nativeEvent.layout
         //console.log(height)
