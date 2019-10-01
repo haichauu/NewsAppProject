@@ -5,6 +5,7 @@ import AppText from '../Components/Common/AppText'
 import SourceItem from '../Components/Source/SourceItem';
 import AppFlatList from '../Components/Common/AppFlatList';
 import {connect} from 'react-redux';
+import AppIndicator from '../Components/Common/AppIndicator';
 
 
 
@@ -23,9 +24,6 @@ class SourceContainer extends Component {
 
 
     render() {
-        //console.log(this.props.isLoadingDataSource)
-        //alert(this.props.stateArticle.isLoading)
-       // console.log(this.props.newProps)
         const {data} = this.props.newProps;
         const flatListProps = {
             sourceData: data,
@@ -34,7 +32,7 @@ class SourceContainer extends Component {
         }
         return (
             <View style={styles.container}>
-                {this.props.newProps.isLoading ? <ActivityIndicator color='pink'/> : null}
+                <AppIndicator show={data.isLoading} />
                 <AppFlatList {...flatListProps} />
                 <Button title='Move to Article Container' onPress={() => { this.props.navigation.navigate('ArticleScreen') }} />
                 <Button title='Go Back' onPress={() => { this.props.navigation.goBack() }} />

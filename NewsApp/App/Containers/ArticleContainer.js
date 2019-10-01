@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, Button } from 'react-native'
+import { Text, View, Button, ActivityIndicator } from 'react-native'
 import AppFlatList from '../Components/Common/AppFlatList';
 import styles from './Styles/ArticleContainerStyle'
 import {connect} from 'react-redux';
-
+import AppIndicator from '../Components/Common/AppIndicator';
 
 class ArticleContainer extends Component {
     constructor(props) {
@@ -33,6 +33,7 @@ class ArticleContainer extends Component {
         console.log(data)
         return (
             <View style={styles.container}>
+                <AppIndicator show={data.isLoading} />
                 <AppFlatList {...flatListProps} />
             </View>
         )
