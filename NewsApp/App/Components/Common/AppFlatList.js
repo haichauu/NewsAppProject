@@ -7,7 +7,7 @@ const AppFlatList = (props) => {
     const { sourceData, articleData, numColumns, onPressItem } = props;
 
     const renderArticleItem = (item) => {
-        const {urlToImage, title, author, publishedAt, url, description } = item;
+        const {urlToImage, title, author, publishedAt, url, description, id } = item;
         //console.log(id)
         const props = {
             key: title,
@@ -28,9 +28,6 @@ const AppFlatList = (props) => {
         )
     }
 
-    const OnPressItem = (id) => {
-        console.log(id)
-    }
 
     const renderResourceItem = (item) => {
         const {id, name, description, url, category } = item;
@@ -45,6 +42,7 @@ const AppFlatList = (props) => {
             description,
             urlWebsite: url,
             category,
+
             onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })}
         }
         return (

@@ -6,12 +6,14 @@ import {Icon} from 'react-native-elements'
 
 
 const SourceItem = (props) => {
+
     const {id, name, urlWebsite, description, style, category, onPressItem } = props;
     // APIKEYS = 8acf329a8769447e9bc1c73cb0e76d7d
 
+
     return (
         <View {...props} style={[styles.container, style]}>
-            <TouchableOpacity onPress={() => onPressItem(id)} style={styles.titleWrapper} >
+            <TouchableOpacity onPress={() => onPressItem()} style={styles.titleWrapper} >
                 <AppText text={name} style={styles.nameText} />
                
             </TouchableOpacity>

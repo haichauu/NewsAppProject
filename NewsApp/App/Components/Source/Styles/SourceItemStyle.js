@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
 
     categotyText: {
         color: 'red'
+
     },
     categotyText: {
         color: '#ffffff',

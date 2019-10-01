@@ -43,7 +43,6 @@ export default class MoreLessText extends Component {
 
         const { children, text, style, textStyle } = this.props
         const { isExpand, numberOfLinesAtStart } = this.state
-        console.log(this.state.numberOfLinesAtStart)
         let itemProps = {
             style: textStyle,
             text: children ? children : text,
