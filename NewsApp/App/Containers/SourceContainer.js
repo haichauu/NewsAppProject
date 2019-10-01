@@ -36,8 +36,6 @@ class SourceContainer extends Component {
             <View style={styles.container}>
                 {this.props.newProps.isLoading ? <ActivityIndicator color='pink'/> : null}
                 <AppFlatList {...flatListProps} />
-                <Button title='Move to Article Container' onPress={() => { this.props.navigation.navigate('ArticleScreen') }} />
-                <Button title='Go Back' onPress={() => { this.props.navigation.goBack() }} />
             </View>
         )
     }
@@ -51,8 +49,6 @@ mapStateToProps = (state) => ({
 
 mapDispatchToProps = (dispatch) => ({
     LoadDataSoure : dispatch({type: 'LOAD_DATA_SOURCE'}),
-    loadDataArticle: dispatch({type: 'LOAD_DATA_ARTICLE', url: 'https://newsapi.org/v1/sources?language=en'})
-    //GetData: dispatch({type: 'GET_DATA_SOURCE', data: list})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SourceContainer);

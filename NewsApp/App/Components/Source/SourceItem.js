@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground, Linking, TouchableOpacity } from 'react-native';
 import styles from './Styles/SourceItemStyle';
 import AppText from '../Common/AppText'
+import {Icon} from 'react-native-elements'
 
 
 const SourceItem = (props) => {
@@ -15,7 +16,14 @@ const SourceItem = (props) => {
             </TouchableOpacity>
             <View style={styles.infoWrapper}>
             <AppText text={category.charAt(0).toUpperCase() + category.slice(1)} style={styles.categotyText} />
-                <AppText onPress={() => {Linking.openURL(urlWebsite)}} text='Link' style={styles.websiteText} />
+                <Icon 
+                    name='arrow-right'
+                    type= 'font-awesome'
+                    color='#bf7f89'
+                    containerStyle={styles.iconContainer}
+                    size={12}
+                    onPress={() => {Linking.openURL(urlWebsite)}}
+                        />
                 <AppText numberOfLines={3} text={description} style={styles.descriptionText} />
             </View>
         </View>
