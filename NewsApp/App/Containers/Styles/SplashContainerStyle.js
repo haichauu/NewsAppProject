@@ -10,12 +10,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'pink'
+        backgroundColor: '#b4d3d3'
     },
     title: {
         fontSize: 50,
         fontFamily: font,
         color: 'white',
+        fontWeight: 'bold'
     }
 
 })
