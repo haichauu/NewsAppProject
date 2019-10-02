@@ -3,7 +3,6 @@ import {View, ImageBackground, TouchableOpacity} from 'react-native';
 import AppText from '../Common/AppText'
 import styles from './Styles/ArticleItemStyle'
 import MoreLessText from '../Common/MoreLessText'
-import {navigate, goBack} from '../../Utils/NavigationUtils'
 import {convertUTCToLocal} from '../../Utils/Utils'
 
 const ArticleItem = (props) => {

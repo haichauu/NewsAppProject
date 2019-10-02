@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Platform} from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         shadowColor: 'red',
         shadowOffset: {width: 5, height: 8},
         shadowRadius: 3,
-        elevation: 6
+        elevation: Platform.OS === 'ios' ? 6 : 0
     },
     imageBackground: {
         width: '100%',
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         paddingVertical: 5,
         color: 'black',
+        fontWeight: 'bold'
     },
     publishedAtText: {
         fontSize: 13,

@@ -10,7 +10,6 @@ const AppFlatList = (props) => {
         const {urlToImage, title, author, publishedAt, url, description, id } = item;
         //console.log(id)
         const props = {
-            key: id,
             style: {
                 margin: 5
             },
@@ -33,17 +32,14 @@ const AppFlatList = (props) => {
         const {id, name, description, url, category } = item;
         const props = {
             key: id,
-            id,
             style: {
                 margin: 5
             },
-            id,
             name,
             description,
-            urlWebsite: url,
             category,
-
-            onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })}
+            onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })},
+            onPressLink: () => {onPressItem.navigate('NewsDetailScreen', { url: url, name: name})}
         }
         return (
             <SourceItem  {...props} />
@@ -57,7 +53,7 @@ const AppFlatList = (props) => {
     }
 
     return (
-        <FlatList {...props} {...flatListProps}/>
+        <FlatList keyExtractor={(item, index) => index.toString()} {...props} {...flatListProps}/>
     )
 }
 

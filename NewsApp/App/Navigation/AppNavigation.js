@@ -6,6 +6,7 @@ import SplashContainer from '../Containers/SplashContainer';
 import SourceContainer from '../Containers/SourceContainer';
 import ArticleContainer from '../Containers/ArticleContainer';
 import DetailContainer from '../Containers/DetailContainer';
+import NewsDetailContainer from '../Containers/NewsDetailContainer'
 
 const mainNav = createStackNavigator(
     {
@@ -13,6 +14,8 @@ const mainNav = createStackNavigator(
         SourceScreen: { screen: SourceContainer, navigationOptions: () => ({ headerLeft: null }) },
         ArticleScreen: { screen: ArticleContainer },
         DetailScreen: { screen: DetailContainer },
+        NewsDetailScreen: { screen: NewsDetailContainer }
+
     },
     {
 
@@ -36,6 +39,9 @@ const titleName = (routeName) => {
             break;
         case 'DetailScreen':
             titleName = 'Detail'
+            break;
+        case 'NewsDetailScreen':
+            titleName = 'News Detail'
             break;
         default:
             break;

@@ -34,7 +34,7 @@ class ArticleContainer extends Component {
         return (
             <View style={styles.container}>
                 <AppIndicator show={isLoading} />
-                <AppFlatList {...flatListProps} />
+                {!isLoading && <AppFlatList {...flatListProps} />}
             </View>
         )
     }

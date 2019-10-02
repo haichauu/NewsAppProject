@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
 const { height, width } = Dimensions.get('window');
 const widthItem = (width - 30) * 0.5;
@@ -19,8 +19,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.36,
         shadowRadius: 2,
-
-        elevation: 2,
+        elevation: Platform.OS === 'ios' ? 2 : 0,
     },
 
     titleWrapper: {
