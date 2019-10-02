@@ -4,15 +4,11 @@ import AppText from '../Common/AppText'
 import styles from './Styles/ArticleItemStyle'
 import MoreLessText from '../Common/MoreLessText'
 import {navigate, goBack} from '../../Utils/NavigationUtils'
+import {convertUTCToLocal} from '../../Utils/Utils'
 
 const ArticleItem = (props) => {
-    const {urlImage, title, author, publishedAt, description, url, style, onPressItem} = props
+    const {urlImage, title, author, publishedAt, description, style, onPressItem} = props
 
-    const convertUTCToLocalTime = (utcTime) => {
-        let localTime = new Date(utcTime)
-        return localTime.getDate() + '/' + localTime.getMonth( ) + '/' + localTime.getFullYear( ) 
-        + ' at ' + localTime.getHours() + ':' + localTime.getMinutes()
-    }
     
     const moreLessProps = {
         numberOfLines: 3,
@@ -28,7 +24,7 @@ const ArticleItem = (props) => {
             <View style={styles.infoWrapper}>
                 <AppText style={styles.titleText} text={title} />
                 <AppText style={styles.authorText} text={author} />
-                <AppText style={styles.publishedAtText} text={convertUTCToLocalTime(publishedAt)} />
+                <AppText style={styles.publishedAtText} text={convertUTCToLocal(publishedAt)} />
                 <MoreLessText {...moreLessProps}  />
             </View>
         </TouchableOpacity>

@@ -9,8 +9,8 @@ import DetailContainer from '../Containers/DetailContainer';
 
 const mainNav = createStackNavigator(
     {
-        SplashScreen: { screen: SplashContainer, navigationOptions: () => ({header: null}) },
-        SourceScreen: { screen: SourceContainer, navigationOptions: () => ({headerLeft: null}) },
+        SplashScreen: { screen: SplashContainer, navigationOptions: () => ({ header: null }) },
+        SourceScreen: { screen: SourceContainer, navigationOptions: () => ({ headerLeft: null }) },
         ArticleScreen: { screen: ArticleContainer },
         DetailScreen: { screen: DetailContainer },
     },
@@ -18,12 +18,30 @@ const mainNav = createStackNavigator(
 
         headerBackTitleVisible: false,
         defaultNavigationOptions: ({ navigation }) => ({
-            title: navigation.state.routeName,
+            title: titleName(navigation.state.routeName),
         }),
         initialRouteName: 'SplashScreen',
     }
 
 )
+
+const titleName = (routeName) => {
+    let titleName = null
+    switch (routeName) {
+        case 'SourceScreen':
+            titleName = 'Source'
+            break;
+        case 'ArticleScreen':
+            titleName = 'Article'
+            break;
+        case 'DetailScreen':
+            titleName = 'Detail'
+            break;
+        default:
+            break;
+    }
+    return titleName
+}
 
 export default createAppContainer(mainNav);
 

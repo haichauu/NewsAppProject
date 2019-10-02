@@ -10,7 +10,7 @@ const AppFlatList = (props) => {
         const {urlToImage, title, author, publishedAt, url, description, id } = item;
         //console.log(id)
         const props = {
-            key: title,
+            key: id,
             style: {
                 margin: 5
             },
@@ -46,7 +46,7 @@ const AppFlatList = (props) => {
             onPressItem: () => {onPressItem.navigate('ArticleScreen', { id: id })}
         }
         return (
-            <SourceItem key={item.id}  {...props} />
+            <SourceItem  {...props} />
         )
     }
 
