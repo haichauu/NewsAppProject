@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     publishedAtText: {
         fontSize: 13,
         color: 'black',
-        textAlign: 'right'
+        textAlign: 'right',
+        fontStyle: 'italic',
+        textDecorationLine: 'underline'
     },
     descriptionText: {
         fontSize: 15,
