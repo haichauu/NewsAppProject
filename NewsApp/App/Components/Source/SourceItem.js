@@ -5,6 +5,7 @@ import AppText from '../Common/AppText'
 import {Icon} from 'react-native-elements'
 
 
+
 const SourceItem = (props) => {
 
     const {id, name, urlWebsite, description, style, category, onPressItem } = props;
@@ -25,8 +26,11 @@ const SourceItem = (props) => {
                     color='#bf7f89'
                     containerStyle={styles.iconContainer}
                     size={12}
-                    onPress={() => {Linking.openURL(urlWebsite)}}
-                        />
+                    onPress={() => {Linking.openURL(urlWebsite)}} />
+                    
+
+ 
+                        
                 <AppText numberOfLines={3} text={description} style={styles.descriptionText} />
             </View>
         </View>
