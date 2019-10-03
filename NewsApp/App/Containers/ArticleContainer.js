@@ -4,6 +4,7 @@ import AppFlatList from '../Components/Common/AppFlatList';
 import styles from './Styles/ArticleContainerStyle'
 import {connect} from 'react-redux';
 import AppIndicator from '../Components/Common/AppIndicator';
+import {loadDataArticle} from '../Redux/actions/articleActions'
 
 class ArticleContainer extends Component {
     constructor(props) {
@@ -45,7 +46,7 @@ mapDispatchToProps = (state) => ({
 })
 
 mapDispatchToProps = (dispatch) => ({
-    loadDataArticle: (sourceId) => dispatch({type: 'LOAD_DATA_ARTICLE', url: 'https://newsapi.org/v1/articles?source=' + sourceId + '&apiKey=8acf329a8769447e9bc1c73cb0e76d7d'})
+    loadDataArticle: (sourceId) => dispatch(loadDataArticle(sourceId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleContainer);

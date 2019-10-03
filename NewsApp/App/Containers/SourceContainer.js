@@ -6,6 +6,7 @@ import SourceItem from '../Components/Source/SourceItem';
 import AppFlatList from '../Components/Common/AppFlatList';
 import {connect} from 'react-redux';
 import AppIndicator from '../Components/Common/AppIndicator';
+import {loadDataSource}  from '../Redux/actions/sourceActions'
 
 
 
@@ -46,7 +47,7 @@ mapStateToProps = (state) => ({
 })
 
 mapDispatchToProps = (dispatch) => ({
-    LoadDataSoure : dispatch({type: 'LOAD_DATA_SOURCE'}),
+    LoadDataSoure : () => dispatch(loadDataSource()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SourceContainer);

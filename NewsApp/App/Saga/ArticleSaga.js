@@ -1,12 +1,32 @@
-import { put, all , takeLatest } from 'redux-saga/effects'
+import { put, all , call, takeLatest } from 'redux-saga/effects'
+import {getArticleDataSuccess, getAricleDataFailure} from '../Redux/actions/articleActions'
+import {getDataArticle} from '../Services/Apis/ApiArticle'
 
 
 function* fetchApiArticle(action){
-    const data = yield fetch(action.url)
-    .then(response => response.json(),);
+    // const data = yield fetch(action.url)
+    // .then(response => response.json(),);
     
-    yield put({type: 'GET_DATA_ARTICLE', data: data.articles})
-   
+    // yield put(getArticleDataSuccess(data.articles))
+
+//    try{
+//     const respond = yield call(getDataArticle(action.url));
+//     yield put(getArticleDataSuccess(respond))
+//    }
+//    catch(e)
+//    {
+//     yield put(getAricleDataFailure())
+
+//    }
+    
+    try{
+        const respond = yield call(getDataArticle, action.url);
+    yield put(getArticleDataSuccess(respond.articles))
+    }
+    catch(e){
+        yield put(getAricleDataFailure(e))
+    }
+    
     
 }
 

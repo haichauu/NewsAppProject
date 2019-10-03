@@ -4,15 +4,18 @@ const defaultState = {
 }
 
 const loadingData = (state = defaultState, action) => {
-    if(action.type ==='LOAD_DATA_ARTICLE')
+    switch(action.type)
     {
-        return {...state, isLoading: true};
+        case 'LOAD_DATA_ARTICLE':
+            return {...state, isLoading: true};
+        case 'GET_DATA_ARTICLE_SUCCESS':
+            return  {...state, data: action.data, isLoading: false};
+        case 'GET_DATA_ARTICLE_FAILURE':
+            return {...state, isLoading: false}
+        default: 
+            return state;
+
     }
-    if(action.type === 'GET_DATA_ARTICLE')
-    {
-        return  {data: action.data, isLoading: false}
-    }
-    return state;
 
 }
 
