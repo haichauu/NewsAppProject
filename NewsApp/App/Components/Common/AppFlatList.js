@@ -7,7 +7,7 @@ import ArticleItem from '../Article/ArticleItem'
 const AppFlatList = (props) => {
     const { sourceData, articleData, numColumns, onPressItem } = props;
 
-    const renderArticleItem = (item) => {
+    const renderArticleItem = (item, index) => {
         const {urlToImage, title, author, publishedAt, url, description, id } = item;
         const props = {
             style: styles.marginItem,

@@ -20,6 +20,7 @@ class SourceContainer extends Component {
 
     componentDidMount = () => {
        this.props.LoadDataSoure;
+       console.log(this.props.newProps)
 
     }
 
@@ -42,8 +43,7 @@ class SourceContainer extends Component {
 
 mapStateToProps = (state) => ({
     newProps : state.stateSource,
-    //dataSource: state.dataSource,
-    stateArticle: state.stateArticle
+   
 })
 
 mapDispatchToProps = (dispatch) => ({

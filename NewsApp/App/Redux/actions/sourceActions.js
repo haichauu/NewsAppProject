@@ -1,6 +1,8 @@
+import constant from '../constants'
+
 export const loadDataSource = () => {
     return {
-        type: 'LOAD_DATA_SOURCE'
+        type: constant.LoadDataSource
     }
 }
 

@@ -1,3 +1,5 @@
+import constants from '../constants'
+
 const defaultState = {
     isLoading: false
 
@@ -6,11 +8,11 @@ const defaultState = {
 const loadingData = (state = defaultState, action) => {
     switch(action.type)
     {
-        case 'LOAD_DATA_ARTICLE':
+        case constants.LoadDataArticle:
             return {...state, isLoading: true};
-        case 'GET_DATA_ARTICLE_SUCCESS':
+        case constants.GetDataArticleSuccess:
             return  {...state, data: action.data, isLoading: false};
-        case 'GET_DATA_ARTICLE_FAILURE':
+        case constants.GetDataArticleFailure:
             return {...state, isLoading: false}
         default: 
             return state;

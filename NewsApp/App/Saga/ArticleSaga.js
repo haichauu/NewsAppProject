@@ -1,6 +1,7 @@
 import { put, all, call, takeLatest } from 'redux-saga/effects'
 import { getArticleDataSuccess, getAricleDataFailure } from '../Redux/actions/articleActions'
 import { getDataArticle } from '../Services/Apis/ApiArticle'
+import constants from '../Redux/constants'
 
 
 function* fetchApiArticle(action) {
@@ -17,7 +18,7 @@ function* fetchApiArticle(action) {
 }
 
 export default function* actionWatcher() {
-    yield takeLatest('LOAD_DATA_ARTICLE', fetchApiArticle)
+    yield takeLatest(constants.LoadDataArticle, fetchApiArticle)
 }
 
 
