@@ -1,21 +1,21 @@
-import { put, all , takeLatest } from 'redux-saga/effects'
-import {getDataSourceSuccess} from '../Redux/actions/sourceActions'
+import { put, call, takeLatest } from 'redux-saga/effects'
+import {getDataSourceSuccess, getDataSourceFailure} from '../Redux/actions/sourceActions'
+import {getDataSource} from '../Services/Apis/ApiSource'
 
+const url = 'https://newsapi.org/v1/sources?language=en'
 
 function* fetchApiSouce(){
-    const data = yield fetch('https://newsapi.org/v1/sources?language=en')
-    .then(response => response.json(),);
-
-    yield put(getDataSourceSuccess(data.sources));
-    //console.log(data, 'fine')
-
-  //  const data = respond.json();
-   
-    
+  try {
+    const respond = yield call(getDataSource, url)
+    yield put(getDataSourceSuccess(respond.sources))
+  }
+  catch (e) {
+    yield put(getDataSourceFailure(e))
+  } 
 }
 
 export default function* actionWatcher(){
-    yield takeLatest('LOAD_DATA_SOURCE', fetchApiSouce,)
+    yield takeLatest('LOAD_DATA_SOURCE', fetchApiSouce)
 }
 
 

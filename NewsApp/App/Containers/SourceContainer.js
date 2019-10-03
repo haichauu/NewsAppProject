@@ -47,7 +47,7 @@ mapStateToProps = (state) => ({
 })
 
 mapDispatchToProps = (dispatch) => ({
-    LoadDataSoure : () => dispatch(loadDataSource()),
+    LoadDataSoure : dispatch(loadDataSource()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SourceContainer);
