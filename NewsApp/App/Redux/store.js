@@ -7,9 +7,16 @@ import rootSaga from '../Saga/index'
 
 const sagaMiddleWare = createSagaMiddleware();
 
+const isDevMode = () => {
+    if(__DEV__){
+        return true
+    }
+    return false
+}
+
 const store = createStore(
     reducer,
-    applyMiddleware(sagaMiddleWare, logger)
+    applyMiddleware(sagaMiddleWare, isDevMode() && logger)
     );
 
 sagaMiddleWare.run(rootSaga);

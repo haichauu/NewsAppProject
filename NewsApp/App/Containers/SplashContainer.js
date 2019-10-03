@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { View, Button } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { View } from 'react-native'
 import AppText from '../Components/Common/AppText'
 import styles from '../Containers/Styles/SplashContainerStyle'
 import { Icon } from 'react-native-elements'
+import {Metrics, Colors} from '../Themes'
 
 export default class SplashContainer extends Component {
 
@@ -24,8 +24,8 @@ export default class SplashContainer extends Component {
         const iconProps = {
             name: 'logo-snapchat',
             type: 'ionicon',
-            color: 'white',
-            size: 65
+            color: Colors.WHITECOLOR,
+            size: Metrics.icon.lxx
         } 
 
         return (

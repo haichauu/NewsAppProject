@@ -1,4 +1,4 @@
-import { put, all , takeLatest } from 'redux-saga/effects'
+import { all } from 'redux-saga/effects'
 import sourceSaga from './SourceSaga';
 import articleSaga from './ArticleSaga'
 

@@ -1,18 +1,18 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
+import {Font, Colors, Metrics} from '../../../Themes'
 
-const { height, width } = Dimensions.get('window');
-const widthItem = (width - 30) * 0.5;
+const widthItem = (Metrics.WINDOW_WIDTH - 30) * 0.5;
 
 
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#b4d3d3',
+        backgroundColor: Colors.PRIMARYCOLOR,
         width: widthItem,
         height: widthItem,
-        padding: 5,
+        padding: Metrics.PADDING_LV1,
         borderRadius: 10,
-        shadowColor: "#000",
+        shadowColor: Colors.SHADOWCOLOR,
         shadowOffset: {
             width: 0,
             height: 3,
@@ -29,16 +29,8 @@ const styles = StyleSheet.create({
 
     },
 
-    websiteText: {
-        color: '#b76e79',
-        fontSize: 16,
-        textShadowColor: 'rgba(255, 255, 255, 0.3)',
-        textShadowOffset: { width: 2, height: 2 },
-        textShadowRadius: 4,
-    },
-
     iconContainer: {
-        backgroundColor: 'white',
+        backgroundColor: Colors.WHITECOLOR,
         width: 25,
         height: 25,
         justifyContent: 'center',
@@ -47,28 +39,24 @@ const styles = StyleSheet.create({
     },
 
     nameText: {
-        color: '#bf7f89',
-        textShadowColor: 'rgba(255, 255, 255, 0.3)',
+        color: Colors.PINKCOLOR,
+        textShadowColor: Colors.SHADOWCOLOR,
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 4,
         fontWeight: 'bold',
-        fontSize: 22,
+        fontSize: Font.LX_SIZE,
         textAlign: "center"
-
     },
 
     descriptionText: {
-        color: 'black',
-        fontSize: 14
+        color: Colors.DARKCOLOR,
+        fontSize: Font.MEDIUM_SIZE
 
     },
 
     categotyText: {
-        color: 'red'
-
-    },
-    categotyText: {
-        color: '#ffffff',
+        color: Colors.WHITECOLOR,
+        fontSize: Font.MEDIUM_SIZE
     },
 
     infoWrapper: {

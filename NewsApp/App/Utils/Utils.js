@@ -1,7 +1,7 @@
 
 
 
-export const convertUTCToLocal = (utcString) => {
+const convertUTCToLocal = (utcString) => {
     const localTime = new Date(utcString)
 
         const dateTime = localTime.getDate().toString().padStart(2, '0')
@@ -9,8 +9,19 @@ export const convertUTCToLocal = (utcString) => {
         const year = localTime.getFullYear().toString()
         const hour = localTime.getHours().toString().padStart(2, '0')
         const minute = localTime.getMinutes().toString().padStart(2, '0')
-    console.log(localTime)
         return dateTime + '/' + month + '/' +  year
         + ' at ' + hour + ':' + minute
+}
+
+const isDevMode = () => {
+    if(__DEV__) {
+        return true
+    }
+    return false
+}
+
+export default {
+    convertUTCToLocal,
+    isDevMode
 }
 

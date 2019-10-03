@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { FlatList } from 'react-native'
+import styles from './Styles/AppFlatListStyle'
 import SourceItem from '../Source/SourceItem'
 import ArticleItem from '../Article/ArticleItem'
 
@@ -8,11 +9,8 @@ const AppFlatList = (props) => {
 
     const renderArticleItem = (item) => {
         const {urlToImage, title, author, publishedAt, url, description, id } = item;
-        //console.log(id)
         const props = {
-            style: {
-                margin: 5
-            },
+            style: styles.marginItem,
             urlImage: urlToImage,
             title,
             author,
@@ -32,9 +30,7 @@ const AppFlatList = (props) => {
         const {id, name, description, url, category } = item;
         const props = {
             key: id,
-            style: {
-                margin: 5
-            },
+            style: styles.marginItem,
             name,
             description,
             category,
@@ -49,11 +45,12 @@ const AppFlatList = (props) => {
     const flatListProps = {
         data: articleData ? articleData : sourceData ? sourceData : null,
         numColumns: numColumns,
+        keyExtractor: (item, index) => index.toString(),
         renderItem: ({item}) => articleData ? renderArticleItem(item) : sourceData ? renderResourceItem(item) : null
     }
 
     return (
-        <FlatList keyExtractor={(item, index) => index.toString()} {...props} {...flatListProps}/>
+        <FlatList {...props} {...flatListProps}/>
     )
 }
 

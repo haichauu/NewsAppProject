@@ -1,10 +1,11 @@
 import {StyleSheet, Platform} from 'react-native'
+import {Font, Colors, Metrics} from '../../../Themes'
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#c4dcdc',
+        backgroundColor: Colors.SECONDARYCOLOR,
         borderRadius: 10,
-        shadowColor: 'red',
+        shadowColor: Colors.SHADOWCOLOR,
         shadowOffset: {width: 5, height: 8},
         shadowRadius: 3,
         elevation: Platform.OS === 'ios' ? 6 : 0
@@ -16,32 +17,27 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontWeight: 'bold',
-        fontSize: 22
-    
+        fontSize: Font.LX_SIZE,
+        color: Colors.WHITECOLOR
     },
     authorText: {
-        fontSize: 13,
-        paddingVertical: 5,
-        color: 'black',
+        paddingVertical: Metrics.PADDING_LV1,
+        color: Colors.DARKCOLOR,
         fontWeight: 'bold'
     },
     publishedAtText: {
-        fontSize: 13,
-        color: 'black',
         textAlign: 'right',
         fontStyle: 'italic',
         textDecorationLine: 'underline'
     },
     descriptionText: {
-        fontSize: 15,
-        color: 'black',
-
+        fontSize: Font.MEDIUM_SIZE,
     },
     descriptionStyle: {
-        paddingVertical: 5,
+        paddingVertical: Metrics.PADDING_LV1,
     },
     infoWrapper: {
-        padding: 10,
+        padding: Metrics.PADDING_LV2,
     }
 })
 
