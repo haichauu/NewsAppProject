@@ -1,34 +1,51 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, Linking, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import styles from './Styles/SourceItemStyle';
 import AppText from '../Common/AppText'
 import {Icon} from 'react-native-elements'
+import {Metrics, Colors} from '../../Themes'
 
 
 
 const SourceItem = (props) => {
 
     const {name, description, style, category, onPressItem, onPressLink } = props;
-    // APIKEYS = 8acf329a8769447e9bc1c73cb0e76d7d
 
     const itemProps = {
         name: 'arrow-right',
         type: 'font-awesome',
-        color:'#bf7f89',
+        color: Colors.PINKCOLOR,
         containerStyle: styles.iconContainer,
-        size: 12,
+        size: Metrics.icon.small,
         onPress: () => onPressLink()
+    }
+    const touchableProps = {
+        onPress: () => onPressItem(),
+        style: styles.titleWrapper
+    }
+    const nameProps = {
+        text: name, 
+        style: styles.nameText
+    }
+    const categoryProps = {
+        text: category.charAt(0).toUpperCase() + category.slice(1),
+        style: styles.categotyText
+    }
+    const descriptionProps = {
+        numberOfLines: 3, 
+        text: description, 
+        style: styles.descriptionText
     }
 
     return (
         <View {...props} style={[styles.container, style]}>
-            <TouchableOpacity onPress={() => onPressItem()} style={styles.titleWrapper} >
-                <AppText text={name} style={styles.nameText} />
+            <TouchableOpacity {...touchableProps} >
+                <AppText {...nameProps} />
             </TouchableOpacity>
             <View style={styles.infoWrapper}>
-            <AppText text={category.charAt(0).toUpperCase() + category.slice(1)} style={styles.categotyText} />
+            <AppText {...categoryProps} />
                 <Icon {...itemProps} />
-                <AppText numberOfLines={3} text={description} style={styles.descriptionText} />
+                <AppText {...descriptionProps} />
             </View>
         </View>
     );

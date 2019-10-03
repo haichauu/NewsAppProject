@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import AppText from './AppText';
 import styles from './Styles/MoreLessTextStyle';
 
@@ -40,7 +40,7 @@ export default class MoreLessText extends Component {
     render() {
 
         const { children, text, style, textStyle } = this.props
-        const { isExpand, numberOfLinesAtStart } = this.state
+        const { isExpand, numberOfLinesAtStart, showButton } = this.state
         let itemProps = {
             style: textStyle,
             text: children ? children : text,
@@ -50,7 +50,7 @@ export default class MoreLessText extends Component {
         return (
             <View style={style} onLayout={(event) => this.onLayout(event)}>
                 <AppText {...itemProps} />
-                {this.state.showButton &&
+                {showButton &&
                     <TouchableOpacity onPress={() => this.onPressMoreLess()}>
                         <AppText style={styles.buttonText}>{isExpand ? 'Less' : 'More'}</AppText>
                     </TouchableOpacity>
