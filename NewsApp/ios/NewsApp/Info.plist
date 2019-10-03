@@ -58,7 +58,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<array>
-		<string></string>
+		<string/>
 	</array>
 </dict>
 </plist>

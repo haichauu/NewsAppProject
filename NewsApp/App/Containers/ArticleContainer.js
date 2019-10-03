@@ -41,7 +41,7 @@ class ArticleContainer extends Component {
     }
 }
 
-mapDispatchToProps = (state) => ({
+mapStateToProps = (state) => ({
     stateArticle: state.stateArticle
 })
 
