@@ -2,7 +2,11 @@ import constant from '../constants'
 
 export const loadDataSource = () => {
     return {
-        type: constant.LoadDataSource
+        type: constant.LoadDataSource,
+        name: 'sources',
+        params: {
+            language: 'en'
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 import ApiEngineer from './ApiEngineer'
 
-export const getDataSource = (url) => {
-    return ApiEngineer.get(url)
+export const getDataSource = (name, params) => {
+    return ApiEngineer.get(name, params)
 }

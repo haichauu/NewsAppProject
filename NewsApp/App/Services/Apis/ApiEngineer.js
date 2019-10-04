@@ -1,3 +1,8 @@
+
+
+const url = 'https://newsapi.org/v1/'
+
+
 const validateResult = (result) => {
     return new Promise((resolve, reject) => {
       result.then(response => response.json())
@@ -17,8 +22,12 @@ const validateResult = (result) => {
     
   }
 
-const get = (url) => {
-    return validateResult(fetch(url))
+const get = (name, params) => {
+    var esc = encodeURIComponent
+    var query = Object.keys(params)
+    .map(k => esc(k) + '=' + esc(params[k])).join('&')
+    const URL = url + name + '?' + query
+    return validateResult(fetch(URL))
 }
 
 export default {

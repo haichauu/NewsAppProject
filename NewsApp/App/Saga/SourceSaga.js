@@ -3,14 +3,14 @@ import {getDataSourceSuccess, getDataSourceFailure} from '../Redux/actions/sourc
 import {getDataSource} from '../Services/Apis/ApiSource'
 import constants from '../Redux/constants'
 
-const url = 'https://newsapi.org/v1/sources?language=en'
 
-function* fetchApiSouce(){
+function* fetchApiSouce(action){
   try {
-    const respond = yield call(getDataSource, url)
+    const respond = yield call(getDataSource, action.name, action.params)
     yield put(getDataSourceSuccess(respond.sources))
   }
   catch (e) {
+
     yield put(getDataSourceFailure(e))
   } 
 }

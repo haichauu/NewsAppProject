@@ -15,7 +15,6 @@ const mainNav = createStackNavigator(
         ArticleScreen: { screen: ArticleContainer },
         DetailScreen: { screen: DetailContainer },
         NewsDetailScreen: { screen: NewsDetailContainer }
-
     },
     {
 

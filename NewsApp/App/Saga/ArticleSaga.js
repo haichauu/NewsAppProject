@@ -7,7 +7,7 @@ import constants from '../Redux/constants'
 function* fetchApiArticle(action) {
 
     try {
-        const respond = yield call(getDataArticle, action.url);
+        const respond = yield call(getDataArticle, action.name, action.params);
         yield put(getArticleDataSuccess(respond.articles))
     }
     catch (e) {
