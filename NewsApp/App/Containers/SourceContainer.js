@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { View, Button, FlatList, Text, ActivityIndicator } from 'react-native'
+import { View} from 'react-native'
 import styles from './Styles/SourceContainerStyle'
-import AppText from '../Components/Common/AppText'
-import SourceItem from '../Components/Source/SourceItem';
 import AppFlatList from '../Components/Common/AppFlatList';
 import {connect} from 'react-redux';
 import AppIndicator from '../Components/Common/AppIndicator';
@@ -20,17 +18,18 @@ class SourceContainer extends Component {
 
     componentDidMount = () => {
        this.props.LoadDataSoure;
-       console.log(this.props.newProps)
+    //    console.log(this.props.newProps)
 
     }
 
 
     render() {
+        const {navigation} = this.props;
         const {data, isLoading} = this.props.newProps;
         const flatListProps = {
             sourceData: data,
             numColumns: 2,
-            onPressItem: this.props.navigation
+            onPressItem: navigation
         }
         return (
             <View style={styles.container}>

@@ -19,10 +19,11 @@ export default class MoreLessText extends Component {
     onLayout = (event) => {
         const { originalHeight } = this.state
         const { height } = event.nativeEvent.layout
+        const{numberOfLines} = this.props;
         if (this.props.numberOfLines) {
             if (!this.state.numberOfLinesAtStart) {
                 this.setState({
-                    numberOfLinesAtStart: this.props.numberOfLines,
+                    numberOfLinesAtStart: numberOfLines,
                     originalHeight: height
                 })
             }
@@ -33,7 +34,8 @@ export default class MoreLessText extends Component {
     }
 
     onPressMoreLess = () => {
-        this.setState({ isExpand: !this.state.isExpand })
+        const {isExpand} = this.state;
+        this.setState({ isExpand: !isExpand })
     }
 
 

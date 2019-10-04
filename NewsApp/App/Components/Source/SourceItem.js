@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import styles from './Styles/SourceItemStyle';
 import AppText from '../Common/AppText'

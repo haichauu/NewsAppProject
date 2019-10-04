@@ -3,7 +3,7 @@ import {Text } from 'react-native';
 import styles from './Styles/AppTextStyle'
 
 const AppText = (props) => {
-    let text = props.children ? props.children : props.text
+    const text = props.children ? props.children : props.text
 
     return (
         <Text

@@ -1,4 +1,4 @@
-import { put, all, call, takeLatest } from 'redux-saga/effects'
+import { put, call, takeLatest } from 'redux-saga/effects'
 import { getArticleDataSuccess, getAricleDataFailure } from '../Redux/actions/articleActions'
 import { getDataArticle } from '../Services/Apis/ApiArticle'
 import constants from '../Redux/constants'

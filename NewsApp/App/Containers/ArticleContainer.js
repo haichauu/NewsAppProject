@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Button, ActivityIndicator } from 'react-native'
+import {View } from 'react-native'
 import AppFlatList from '../Components/Common/AppFlatList';
 import styles from './Styles/ArticleContainerStyle'
 import {connect} from 'react-redux';
@@ -27,9 +27,10 @@ class ArticleContainer extends Component {
     render() {
 
         const {data, isLoading} = this.props.stateArticle
+        const {navigation} = this.props
         const flatListProps = {
             articleData: data,
-            onPressItem: this.props.navigation
+            onPressItem: navigation
         }
         console.log(data)
         return (
