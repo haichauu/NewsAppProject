@@ -13,15 +13,15 @@ const convertUTCToLocal = (utcString) => {
         + ' at ' + hour + ':' + minute
 }
 
-const isDevMode = () => {
+const consoleApp = (data, string) => {
     if(__DEV__) {
-        return true
+        console.log(data, string)
     }
-    return false
+    return null
 }
 
 export default {
     convertUTCToLocal,
-    isDevMode
+    consoleApp
 }
 

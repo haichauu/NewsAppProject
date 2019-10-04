@@ -18,7 +18,6 @@ class SourceContainer extends Component {
 
     componentDidMount = () => {
        this.props.LoadDataSoure;
-    //    console.log(this.props.newProps)
 
     }
 

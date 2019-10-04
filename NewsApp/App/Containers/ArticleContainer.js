@@ -5,7 +5,7 @@ import styles from './Styles/ArticleContainerStyle'
 import {connect} from 'react-redux';
 import AppIndicator from '../Components/Common/AppIndicator';
 import {loadDataArticle} from '../Redux/actions/articleActions'
-
+import Utils from '../Utils/Utils';
 class ArticleContainer extends Component {
     constructor(props) {
         super(props)
@@ -32,7 +32,7 @@ class ArticleContainer extends Component {
             articleData: data,
             onPressItem: navigation
         }
-        console.log(data)
+        Utils.consoleApp(data)
         return (
             <View style={styles.container}>
                 <AppIndicator show={isLoading} />

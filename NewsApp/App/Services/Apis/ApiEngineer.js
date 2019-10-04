@@ -1,4 +1,4 @@
-
+import Utils from '../../Utils/Utils'
 
 const url = 'https://newsapi.org/v1/'
 
@@ -8,7 +8,7 @@ const validateResult = (result) => {
       result.then(response => response.json())
       .then(data => {
         if (data.status === 'ok') {
-            console.log(data, 'ALO')
+            Utils.consoleApp(data, 'ALO')
             resolve(data)
         }
         const e = data.message;
